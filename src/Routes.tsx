@@ -11,6 +11,7 @@ import PokemonPage from "./pages/PokemonPage";
 
 import light from "./styles/themes/light";
 import dark from "./styles/themes/dark";
+import RoutePathEnum from "./lib/enums/RoutePathEnum";
 
 function AppRoutes() {
   const [theme, setTheme] = useState(light);
@@ -25,8 +26,8 @@ function AppRoutes() {
         <Header toggleTheme={toggleTheme} />
         <GlobalStyle />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/pokemon" element={<PokemonPage />} />
+          <Route path={RoutePathEnum.ROOT} element={<HomePage />} />
+          <Route path={RoutePathEnum.POKEMON_PAGE} element={<PokemonPage />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
